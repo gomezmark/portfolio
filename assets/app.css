@@ -1,0 +1,48 @@
+/* 
+  Application Styles
+*/
+.body {
+  color: #5d5d5d;
+}
+
+.pf-index-card {
+  height: 80vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pf-img-hr {
+  height: 125px;
+  position: absolute;
+  width: calc(100%);
+  background-color: #6e012b;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.pf-img-hr.pf-right {
+  width: 40px;
+  right: 8px;
+}
+
+.pf-portfolio {
+  min-height: 50vh;
+  padding: 70px;
+}
+/* 
+  Hepler css
+*/
+
+/* fonts */
+.f-14 {
+  font-size: 14px;
+}
+
+
+/* displays */
+.relative {
+  position: relative;
+}
