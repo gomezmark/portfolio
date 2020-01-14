@@ -1,5 +1,12 @@
 import colors from 'vuetify/es5/util/colors'
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/nuxt-github-page-template/'
+    // base: '/sample-test/'
+  }
+} : {};
+
 export default {
   mode: 'spa',
   /*
@@ -18,6 +25,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  ...routerBase,
   /*
   ** Customize the progress-bar color
   */
