@@ -13,8 +13,8 @@ export default {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    // titleTemplate: '%s - ' + process.env.npm_package_name,
+    title: 'Mark Gomez Portfolio',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -34,7 +34,7 @@ export default {
   ** Global CSS
   */
   css: [
-    '~/assets/app.css'
+    '~/assets/app.styl'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -62,7 +62,8 @@ export default {
     theme: {
       themes: {
         light: {
-          primary: '#900c3f'
+          primary: '#900c3f',
+          accent: '#6e012b'
         },
         dark: {
           primary: colors.blue.darken2,

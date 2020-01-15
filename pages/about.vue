@@ -1,6 +1,6 @@
 <template>
   <v-container 
-    class="py-0 primary"
+    class="py-0"
     grid-list-lg 
   >
     <v-layout
@@ -66,22 +66,22 @@
                       mx-0
                       wrap
                     >
-                      <v-flex md2>
-                        <v-icon>map</v-icon>
+                      <v-flex md1>
+                        <v-icon>fa-map-marker-alt</v-icon>
                       </v-flex>
-                      <v-flex md10>
+                      <v-flex md11>
                         San Antoio, Los Banos, Laguna, Philippines 4030
                       </v-flex>
-                      <v-flex md2>
-                        <v-icon>call</v-icon>
+                      <v-flex md1>
+                        <v-icon>fa-phone-alt</v-icon>
                       </v-flex>
-                      <v-flex md10>
+                      <v-flex md11>
                         (+63) 995 845 7317
                       </v-flex>
-                      <v-flex md2>
-                        <v-icon>email</v-icon>
+                      <v-flex md1>
+                        <v-icon>fa-envelope</v-icon>
                       </v-flex>
-                      <v-flex md10>
+                      <v-flex md11>
                         gomez.mark29@gmail.com
                       </v-flex>
                     </v-layout>
@@ -102,6 +102,9 @@
                         <p>{{ item.year }}</p>
                       </v-flex>
                     </v-layout>
+                    <v-spacer></v-spacer>
+                    <!-- social -->
+                    <social></social>
                   </v-card-text>
                 </v-card>
               </div>
@@ -150,6 +153,11 @@
           <p class="text-sm-center display-3">Portfolio</p>
         </v-flex>
       </v-layout>
+      <v-layout row wrap justify-center>
+        <v-flex xs12>
+          <portfolio></portfolio>
+        </v-flex>
+      </v-layout>
     </div>
   </v-container>
 
@@ -158,6 +166,8 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import Social from '~/components/Social.vue'
+import Portfolio from '~/components/Portfolio.vue'
 
 export default {
   data () {
@@ -247,7 +257,9 @@ export default {
   },
   components: {
     Logo,
-    VuetifyLogo
+    VuetifyLogo,
+    Social,
+    Portfolio
   }
 }
 </script>

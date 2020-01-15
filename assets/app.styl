@@ -1,6 +1,21 @@
 /* 
   Application Styles
 */
+    
+.fade-transition
+  &-leave-active
+    position: absolute
+ 
+  &-enter-active, &-leave, &-leave-to
+    transition: 0.5s
+ 
+  &-enter, &-leave-to
+    opacity: 0
+
+.page
+  @extend .fade-transition
+
+
 .body {
   color: #5d5d5d;
 }

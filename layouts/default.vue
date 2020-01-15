@@ -2,6 +2,8 @@
   <v-app>
     <v-app-bar
       app
+      dark
+      color="primary"
       hide-on-scroll
     >
       <v-spacer></v-spacer>
