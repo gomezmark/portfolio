@@ -3,13 +3,32 @@
     class="py-0"
     grid-list-lg 
   >
+    <v-snackbar
+      v-model="snackbar"
+      :multi-line="multiLine"
+      top
+      right
+      color="error"
+    >
+      This page is under construction
+      <v-btn
+        color="white"
+        text
+        @click="snackbar = false"
+      >
+        Close
+      </v-btn>
+    </v-snackbar>
+
     <v-layout
       row
       justify-center
       align-center
     >
       <v-flex 
-        md9
+        lg11
+        md12
+        sm12
       >
         <v-card>
           <v-layout
@@ -33,8 +52,9 @@
               </div>
             </v-flex>
             <v-flex md8 class="relative">
+              <h2 class="ml-3 grey--text">Software Engineer / Frontend Developer</h2>
               <div class="pf-img-hr pf-right"></div>
-              <h1 class="ml-3">MARK ANTHONY GOMEZ</h1>
+              <h1 class="ml-3 display-2">MARK ANTHONY GOMEZ</h1>
             </v-flex>
           </v-layout>
           <v-layout row wrap>
@@ -62,46 +82,34 @@
                     </ul>
                     <v-layout
                       row
-                      align-center
                       mx-0
-                      wrap
+                      mb-3
+                      flex-nowrap
                     >
-                      <v-flex md1>
-                        <v-icon>fa-map-marker-alt</v-icon>
-                      </v-flex>
-                      <v-flex md11>
-                        San Antoio, Los Banos, Laguna, Philippines 4030
-                      </v-flex>
-                      <v-flex md1>
-                        <v-icon>fa-phone-alt</v-icon>
-                      </v-flex>
-                      <v-flex md11>
-                        (+63) 995 845 7317
-                      </v-flex>
-                      <v-flex md1>
-                        <v-icon>fa-envelope</v-icon>
-                      </v-flex>
-                      <v-flex md11>
-                        gomez.mark29@gmail.com
-                      </v-flex>
+                      <v-icon>fa-map-marker-alt</v-icon>
+                      <span class="ml-2">San Antoio, Los Banos, Laguna, Philippines 4030</span>
+                    </v-layout>
+                    <v-layout
+                      row
+                      mx-0
+                      mb-3
+                      flex-nowrap
+                    >
+                      <v-icon>fa-phone-alt</v-icon>
+                      <span class="ml-2">(+63) 995 845 7317</span>
+                    </v-layout>
+                    <v-layout
+                      row
+                      mx-0
+                      mb-3
+                      flex-nowrap
+                    >
+                      <v-icon>fa-envelope</v-icon>
+                      <span class="ml-2">gomez.mark29@gmail.com</span>
                     </v-layout>
                     <!--  -->
                     <v-divider class="my-5"></v-divider>
-                    <!-- educational content -->
-                    <v-layout row wrap mt-5>
-                      <v-flex md12>
-                        <p class="headline white--text">Education</p>
-                      </v-flex>
-                      <v-flex
-                        md12
-                        mb-2
-                        v-for="(item, key) in education"
-                        :key="`education-${key}`">
-                        <p class="title mb-1 white--text">{{ item.title }}</p>
-                        <span>{{ item.school }}</span>
-                        <p>{{ item.year }}</p>
-                      </v-flex>
-                    </v-layout>
+        
                     <v-spacer></v-spacer>
                     <!-- social -->
                     <social></social>
@@ -111,36 +119,77 @@
             </v-flex>
             <v-flex md8>
               <div class="px-3">
-                <h3 class="title primary--text">Working Experience</h3>
+                <v-layout row wrap>
+                  <v-btn
+                    depressed
+                    rounded
+                    color="accent"
+                    @click="window = 1">Working Experience
+                  </v-btn>
+                  <v-btn
+                    class="mx-2"
+                    depressed
+                    rounded
+                    color="accent"
+                    @click="window = 2">Education
+                  </v-btn>
+                </v-layout>
                 <div class="my-3">
                   <v-divider></v-divider>
                 </div>
-                <v-timeline>
-                <v-timeline-item
-                  v-for="(year, i) in experience"
-                  :key="i"
-                  small
-                >
-                  <template v-slot:opposite>
-                    <span
-                      :class="`headline font-weight-bold`"
-                      v-text="year.year"
-                    ></span>
-                  </template>
-                  <div class="py-4">
-                    <h2 :class="`headline font-weight-light mb-4`">{{ year.title }}</h2>
-                    <ul>
-                      <li
-                        class="f-14"
-                        v-for="(item, key) in year.description"
-                        :key="`${year.year}-${key}`"
+
+                <v-window v-model="window">
+                  <v-window-item 
+                    class="pf-window-container"
+                    :value="1">
+                    <v-timeline>
+                      <v-timeline-item
+                        v-for="(year, i) in experience"
+                        :key="i"
+                        small
                       >
-                        {{ item }}
-                      </li>
-                    </ul>
-                  </div>
-                </v-timeline-item>
-              </v-timeline>
+                        <template v-slot:opposite>
+                          <span
+                            :class="`headline font-weight-bold`"
+                            v-text="year.year"
+                          ></span>
+                        </template>
+                        <div class="py-4">
+                          <h2 :class="`headline font-weight-light mb-4`">{{ year.title }}</h2>
+                          <ul>
+                            <li
+                              class="f-14"
+                              v-for="(item, key) in year.description"
+                              :key="`${year.year}-${key}`"
+                            >
+                              {{ item }}
+                            </li>
+                          </ul>
+                        </div>
+                      </v-timeline-item>
+                    </v-timeline>
+                  </v-window-item>
+                  <v-window-item 
+                    class="pf-window-container"
+                    :value="2">
+                    <!-- educational content -->
+                    <v-layout row wrap mt-5>
+                      <v-flex md12 xs12>
+                        <p class="headline accent--text">Education</p>
+                      </v-flex>
+                      <v-flex
+                        md12
+                        xs12
+                        mb-2
+                        v-for="(item, key) in education"
+                        :key="`education-${key}`">
+                        <p class="title mb-1">{{ item.title }}</p>
+                        <span>{{ item.school }}</span>
+                        <p class="f-14 grey--text">{{ item.year }}</p>
+                      </v-flex>
+                    </v-layout>
+                  </v-window-item>
+                </v-window>
               </div>
             </v-flex>
           </v-layout>
@@ -153,6 +202,9 @@
           <p class="text-sm-center display-3">Portfolio</p>
         </v-flex>
       </v-layout>
+      <div class="my-3">
+        <v-divider></v-divider>
+      </div>
       <v-layout row wrap justify-center>
         <v-flex xs12>
           <portfolio></portfolio>
@@ -172,6 +224,8 @@ import Portfolio from '~/components/Portfolio.vue'
 export default {
   data () {
     return {
+      window: 1,
+      snackbar: true,
       experience: [
         {
           color: 'cyan',

@@ -3,7 +3,7 @@
     <v-app-bar
       app
       dark
-      color="primary"
+      color="accent"
       hide-on-scroll
     >
       <v-spacer></v-spacer>
