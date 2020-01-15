@@ -26,7 +26,6 @@ export default {
     ]
   },
   ...routerBase,
-  buildDir: 'lib',
   /*
   ** Customize the progress-bar color
   */
