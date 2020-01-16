@@ -5,7 +5,10 @@
       dark
       color="accent"
       hide-on-scroll
-    >
+    > 
+      <nuxt-link to="/">
+        <logo></logo>
+      </nuxt-link>
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn 
@@ -14,7 +17,8 @@
         <v-btn 
           text>Working Experience
         </v-btn>
-        <v-btn 
+        <v-btn
+          to="#portfolio"
           text>Portfolio
         </v-btn>
       </v-toolbar-items>
@@ -28,6 +32,7 @@
 </template>
 
 <script>
+import Logo from '~/components/Logo.vue'
 export default {
   data () {
     return {
@@ -51,6 +56,9 @@ export default {
       rightDrawer: false,
       title: 'Vuetify.js'
     }
+  },
+  components: {
+    Logo
   }
 }
 </script>

@@ -22,7 +22,7 @@ export default {
     ],
     link: [
       { rel: 'stylesheet', type: 'css', href: 'https://fonts.googleapis.com/css?family=Poppins:300,400,600,700&display=swap' },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/logo.ico' }
     ]
   },
   ...routerBase,

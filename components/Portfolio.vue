@@ -11,12 +11,15 @@
           v-for="(item, i) in list"
           :key="i"
         >
-          <v-card>
+          <v-card
+            flat
+            color="transparent">
             <v-card-text>
               <v-layout column wrap>
-                <p>{{ item.title }}</p>
+                <p class="title primary--text text-sm-center">{{ item.title }}</p>
                 <v-img
                   :src="item.image"
+                  contain
                 ></v-img>
               </v-layout>
             </v-card-text>
@@ -36,13 +39,25 @@ export default {
           id: 1,
           title: 'Hotelsakeed',
           description: '',
-          image: './hotelsakeed.png'
+          image: './hotelsakeed.PNG'
         },
         {
           id: 2,
           title: 'Asia-Pacific Multilingual Education Working Group',
           description: '',
-          image: './mle.jpg'
+          image: './mle.JPG'
+        },
+        {
+          id: 3,
+          title: 'Flyakeed',
+          description: '',
+          image: './flyakeed.PNG'
+        },
+        {
+          id: 4,
+          title: 'Mages Social Landing Page',
+          description: '',
+          image: './mages.jpg'
         }
       ]
     }
