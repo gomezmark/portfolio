@@ -3,7 +3,7 @@
     <v-app-bar
       app
       dark
-      color="accent"
+      color="dark darken-3"
       hide-on-scroll
     > 
       <nuxt-link to="/">
@@ -21,12 +21,17 @@
           to="#portfolio"
           text>Portfolio
         </v-btn>
+        <v-btn
+          outlined
+          depressed
+          to="#portfolio"
+          text>
+          Resume
+        </v-btn>
       </v-toolbar-items>
     </v-app-bar>
     <v-content>
-      <v-container class="pa-0">
         <nuxt />
-      </v-container>
     </v-content>
   </v-app>
 </template>
