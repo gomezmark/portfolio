@@ -9,7 +9,7 @@
                 <v-layout row wrap align-center justify-center>
                   <v-flex xs12 md12 text-sm-left>
                     <p class="display-3 mb-2">I'm Mark Anthony Gomez</p>
-
+                    
                     <div class="text-sm-left">
                       <p class="display-1">
                         Experienced Software Engineer / Front-end developer with a
@@ -27,46 +27,118 @@
     </div>
 
     <!-- working experience -->
-    <div>
+    <div class="pf-content-container">
       <page-container>
         <v-layout row wrap>
-          <v-flex md3>
+          <v-flex xs12 sm12 mb-5 >
+            <h2 class="headline font-weight-light bold">Working Experience</h2>
+          </v-flex>
+          <v-flex md4>
             <v-timeline>
-              <v-timeline-item v-for="(year, i) in experience" :key="i" small>
-                <template v-slot:opposite left>
-                  <span :class="`headline font-weight-bold`" v-text="year.year"></span>
+              <v-timeline-item 
+                v-for="(year, i) in experience" 
+                :key="i" 
+                small
+                left>
+                <template left>
+                  <span 
+                    class="btn-pointer" v-text="year.year"
+                    :class="{ 'primary--text font-weight-bold' : year.id === window }"
+                    @click="window = year.id">
+                  </span>
                 </template>
               </v-timeline-item>
             </v-timeline>
           </v-flex>
-          <v-flex xs12 md9>
-            <v-window v-model="window">
-              <v-window-item class="pf-window-container" :value="1">
-                <div class="py-4">
-                  <h2 :class="`headline font-weight-light mb-4`">{{ year.title }}</h2>
-                  <ul>
-                    <li
-                      class="f-14"
-                      v-for="(item, key) in year.description"
-                      :key="`${year.year}-${key}`"
-                    >{{ item }}</li>
-                  </ul>
-                </div>
-              </v-window-item>
+          <v-flex xs12 md8>
+            <v-window 
+              v-model="window"
+              vertical>
+              <template v-for="(data, key) in experience">
+                <v-window-item 
+                  :value="data.id"
+                  :key="`exp-${key}`"
+                  class="" 
+                  >
+                  <div class="py-4">
+                    <h2 
+                      class="headline font-weight-light bold">{{ data.title }}</h2>
+                      <div class="mb-3">
+                        <p class="grey--text mb-0">{{ data.company }}</p>
+                        <p class="grey--text f-12">{{ data.year }}</p>
+                      </div>
+                      <ul>
+                        <li
+                          class="f-14"
+                          v-for="(item, key) in data.description"
+                          :key="`${data.year}-${key}`"
+                        >{{ item }}</li>
+                      </ul>
+                  </div>
+                </v-window-item>
+              </template>
             </v-window>
           </v-flex>
         </v-layout>
       </page-container>
     </div>
     <!-- working experience -->
+
+    <!-- education -->
+    <div class="pf-content-container" style="background-color:#f1f1f1;">
+      <page-container>
+        <v-layout row wrap mb-3>
+          <v-btn text 
+            color="primary"
+            @click="credWindow = 'c1'">Education</v-btn>
+          <v-btn text 
+            color="primary"
+            @click="credWindow = 'c2'">Certifications</v-btn>
+          <v-btn text 
+            color="primary"
+            @click="credWindow = 'c3'">Others</v-btn>
+        </v-layout>
+        <v-spacer></v-spacer>
+        <v-layout row wrap mx-0>
+          <v-flex xs12>
+            <v-window v-model="credWindow">
+              <v-window-item value="c1">
+                <v-layout row wrap>
+                  <v-flex
+                    md12
+                    xs12
+                    mb-2
+                    v-for="(item, key) in education"
+                    :key="`education-${key}`">
+                    <p class="title mb-1">{{ item.title }}</p>
+                    <span>{{ item.school }}</span>
+                    <p class="f-14 grey--text">{{ item.year }}</p>
+                  </v-flex>
+                </v-layout>
+              </v-window-item>
+              <v-window-item value="c2">
+                <certifications></certifications>
+              </v-window-item>
+
+            </v-window>
+          </v-flex>
+        </v-layout>
+
+      </page-container>
+    </div>
+    <!-- education -->
   </div>
 </template>
 
 <script>
 import PageContainer from "~/components/tools/PageContainer.vue";
+import Certifications from '~/components/Certifications.vue'
+
 export default {
   data() {
     return {
+      window: 'e1',
+      credWindow: 'c1',
       experience: [
         {
           id: "e1",
@@ -140,11 +212,29 @@ export default {
           description: [],
           others: []
         }
+      ],
+      education: [
+        {
+          title: 'Bachelor of Computer Science',
+          school: 'Informatics College Northgate',
+          year: '2011 - 2013'
+        },
+        {
+          title: 'International Advanced Diploma in Computer Studies',
+          school: 'Informatics Computer Institute Los Banos',
+          year: '2008 - 2010'
+        },
+        {
+          title: 'Secondary Education',
+          school: 'Trace College',
+          year: '2004 - 2008'
+        },
       ]
     };
   },
   components: {
-    PageContainer
+    PageContainer,
+    Certifications
   }
 };
 </script>
