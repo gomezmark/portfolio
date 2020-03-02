@@ -21,7 +21,7 @@
                       dark
                       outlined
                       large
-                      to="/maintenance"
+                      href="mailto:gomez.mark29@gmail.com"
                       color="accent"
                     >Get In Touch Now</v-btn>
                   </v-flex>
@@ -82,6 +82,32 @@
       </page-container>
     </div>
     <!-- working experience -->
+
+    <!-- techonologies -->
+    <div class="toolbar white--text py-5">
+      <page-container>
+        <v-container grid-list-xs>
+          <v-layout row wrap align-center>
+            <v-flex md12>
+              <p class="accent--text">Some of Technologies I have been using recently</p>
+              <template v-for="(item, key) in technologies">
+                <v-icon
+                  v-if="key !== 0"
+                  color="accent"
+                  class="mx-3"
+                  small
+                  :key="`t-c-${key}`">fab fa-circle</v-icon>
+                <span 
+                  :key="`tech-${key}`"
+                  class="grey--text">
+                  {{ item }}
+                </span>
+              </template>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </page-container>
+    </div>
 
     <!-- education -->
     <div class="pf-educ-container" style="background-color:#f1f1f1;">
@@ -209,7 +235,7 @@
               depressed
               large
               color="accent"
-              to="/maintenance">
+              to="/photography">
               Take a Tour  
             </v-btn>
           </v-flex>
@@ -256,7 +282,7 @@
               large
               depressed
               color="accent"
-              to="/maintenance">
+              to="/about">
               <span class="toolbar--text">Know more things About Me</span>
             </v-btn>
           </v-flex>
@@ -500,7 +526,17 @@ export default {
         }
       ],
       portfolioDialog: false,
-      pView: 0
+      pView: 0,
+      technologies: [
+        'Javascript',
+        'Vue.js',
+        'Nuxt.js',
+        'CSS / CSS3',
+        'HTML',
+        'NodeJs',
+        'Express',
+        'PHP'
+      ]
     };
   },
   components: {
