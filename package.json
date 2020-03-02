@@ -12,6 +12,9 @@
     "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate",
     "deploy:nuxt": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
+  "nuxt": {
+    "port": 8001
+  },
   "dependencies": {
     "nuxt": "^2.0.0",
     "vue-wow": "^1.2.0"
@@ -22,6 +25,7 @@
     "cross-env": "^6.0.3",
     "material-design-icons-iconfont": "^5.0.1",
     "push-dir": "^0.4.1",
+    "sass-loader": "^8.0.2",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2"
   }
