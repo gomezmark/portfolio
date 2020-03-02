@@ -37,49 +37,50 @@
     <div 
       ref="Experience"
       class="pf-content-container">
-      <page-container>
-        <v-layout row wrap>
-          <v-flex xs12 sm12 mb-5>
-            <h2 class="headline font-weight-light bold">Working Experience</h2>
-          </v-flex>
-          <v-flex md4>
-            <v-timeline>
-              <v-timeline-item v-for="(year, i) in experience" :key="i" small left>
-                <template left>
-                  <span
-                    class="btn-pointer"
-                    v-text="year.year"
-                    :class="{ 'primary--text font-weight-bold' : year.id === window }"
-                    @click="window = year.id"
-                  ></span>
-                </template>
-              </v-timeline-item>
-            </v-timeline>
-          </v-flex>
-          <v-flex xs12 md8>
-            <v-window v-model="window" vertical>
-              <template v-for="(data, key) in experience">
-                <v-window-item :value="data.id" :key="`exp-${key}`" class>
-                  <div class="py-4">
-                    <h2 class="headline font-weight-light bold">{{ data.title }}</h2>
-                    <div class="mb-3">
-                      <p class="grey--text mb-0">{{ data.company }}</p>
-                      <p class="grey--text f-12">{{ data.year }}</p>
+      
+        <page-container>
+          <v-layout row wrap>
+            <v-flex xs12 sm12 mb-5>
+              <h2 class="headline font-weight-light bold">Working Experience</h2>
+            </v-flex>
+            <v-flex md4>
+              <v-timeline>
+                <v-timeline-item v-for="(year, i) in experience" :key="i" small left>
+                  <template left>
+                    <span
+                      class="btn-pointer"
+                      v-text="year.year"
+                      :class="{ 'primary--text font-weight-bold' : year.id === window }"
+                      @click="window = year.id"
+                    ></span>
+                  </template>
+                </v-timeline-item>
+              </v-timeline>
+            </v-flex>
+            <v-flex xs12 md8>
+              <v-window v-model="window" vertical>
+                <template v-for="(data, key) in experience">
+                  <v-window-item :value="data.id" :key="`exp-${key}`" class>
+                    <div class="py-4">
+                      <h2 class="headline font-weight-light bold">{{ data.title }}</h2>
+                      <div class="mb-3">
+                        <p class="grey--text mb-0">{{ data.company }}</p>
+                        <p class="grey--text f-12">{{ data.year }}</p>
+                      </div>
+                      <ul>
+                        <li
+                          class="f-14"
+                          v-for="(item, key) in data.description"
+                          :key="`${data.year}-${key}`"
+                        >{{ item }}</li>
+                      </ul>
                     </div>
-                    <ul>
-                      <li
-                        class="f-14"
-                        v-for="(item, key) in data.description"
-                        :key="`${data.year}-${key}`"
-                      >{{ item }}</li>
-                    </ul>
-                  </div>
-                </v-window-item>
-              </template>
-            </v-window>
-          </v-flex>
-        </v-layout>
-      </page-container>
+                  </v-window-item>
+                </template>
+              </v-window>
+            </v-flex>
+          </v-layout>
+        </page-container>
     </div>
     <!-- working experience -->
 
@@ -169,9 +170,9 @@
     <div 
       ref="Portfolio"
       class="pf-portfolio-container">
-      <v-container>
+      <v-container grid-list-xl>
         <v-layout row wrap>
-          <v-flex xs12 text-sm-center>
+          <v-flex xs12 text-sm-center text-xs-center>
             <span class="headline font-weight-light bold">Portfolio</span>
           </v-flex>
         </v-layout>
@@ -205,7 +206,7 @@
     <div class="pf-portfolio-container toolbar">
       <v-container>
         <v-layout row wrap>
-          <v-flex xs12 text-sm-center mb-5>
+          <v-flex xs12 text-sm-center text-xs-center mb-5>
             <span class="pf-display-1 font-weight-light bold white--text">My Photography</span>
           </v-flex>
         </v-layout>
@@ -246,7 +247,7 @@
     <!-- working as freelance -->
     <div 
       class="pf-portfolio-container toolbar darken-1">
-      <v-container>
+      <v-container grid-list-xl>
         <v-layout row wrap>
           <v-flex xs12 text-sm-center mb-5>
             <span class="font-weight-light bold accent--text pf-display-1">Working as Freelance</span>
@@ -257,7 +258,7 @@
               <p>Let us discuss your needs and let help you build your site.</p>
             </div>
           </v-flex>
-          <v-flex xs12 md12 text-sm-center>
+          <v-flex xs12 md12 text-sm-center text-xs-center>
             <v-btn 
               depressed
               large
@@ -272,9 +273,9 @@
     <div 
       ref="About"
       class="pf-about-me-container" style="background-color:#f1f1f1;">
-      <v-container grid-list-xs>
+      <v-container grid-list-md>
         <v-layout row wrap align-center>
-          <v-flex md6 sm6>
+          <v-flex md6 sm6 mb-3>
             <p class="pf-display-1">Myself</p>
             <p>There are more stuff I am doing about my life.</p>
             <p>Being a web devloper / programmer is just one.</p>
@@ -305,12 +306,12 @@
       v-model="portfolioDialog"
       scrollable 
       :overlay="false"
-      max-width="700px"
+      max-width="800px"
       transition="dialog-transition"
     >
       <v-card>
-        <v-card-text class="pa-0">
-          <v-container grid-list-md>
+        <v-card-text class="">
+          <v-container grid-list-lg>
             <v-layout row wrap>
               <v-flex md8>
                <v-img :src="portfolio[pView].image"></v-img>
@@ -319,9 +320,16 @@
                 <p class="primary--text">{{ portfolio[pView].title }}</p>
                 <p>{{ portfolio[pView].description }}</p>
                 <template v-for="(item, key) in portfolio[pView].technologies">
-                  <p
+                  <v-icon
+                    v-if="key !==0 "
+                    :key="`d-tech-${key}`"
+                    small
+                    color="accent">fab fa-circle</v-icon>
+                  <span
                     :key="`tech-${key}`"
-                    class="grey--text f-12">{{ item }}</p>
+                    class="grey--text f-12">
+                    {{ item }}
+                  </span>
                 </template>
               </v-flex>
             </v-layout>
@@ -439,29 +447,29 @@ export default {
         {
           id: 1,
           title: "Hotelsakeed",
-          description: "A web application for hotel reservation.",
-          technologies: ['Vue.js'],
+          description: "A web application for hotel reservation. It has multiple supplier for listing of hotels and rooms available",
+          technologies: ['Vue.js', 'Nuxt.js', 'Javascript', 'CSS', 'HTML', 'Express.js', 'PHP', 'Node.js', 'MySQL', 'MongoDB'],
           image: "./hotelsakeed.PNG"
         },
         {
           id: 2,
           title: "Asia-Pacific Multilingual Education Working Group",
-          description: "",
-          technologies: ['Vue.js'],
+          description: "An organization that provides quality of education for ethnolinguistic communities on different regions of Asia",
+          technologies: ['Vue.js', 'Nuxt.js', 'Vuetify', 'Javascript', 'HTML', 'CSS'],
           image: "./mle.JPG"
         },
         {
           id: 3,
           title: "Flyakeed",
-          description: "",
-          technologies: ['Vue.js'],
+          description: "A web application for flight ticketing and flight reservation. The application provides an easy way of flight reservation.",
+          technologies: ['jQuery', 'javascript', 'HTML', 'CSS', 'Bootstrap', 'grunt'],
           image: "./flyakeed.PNG"
         },
         {
           id: 4,
           title: "Mages Social Landing Page",
           description: "A landing page used for social media interaction",
-          technologies: ['Vue.js'],
+          technologies: ['Vue.js', 'html', 'css'],
           image: "./mages.jpg"
         }
       ],

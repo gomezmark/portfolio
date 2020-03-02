@@ -19,7 +19,7 @@
       </v-container>
     </div>
 
-    <div class="my-5">
+    <div class="my-5 pa-5">
         <v-container grid-list-xs>
 
         <v-layout row wrap>
@@ -35,6 +35,16 @@
                 contain></v-img>
             </v-flex>
           </template>
+          <v-flex xs12 md12 text-xs-center text-sm-center my-5>
+              <v-btn 
+                color="accent"
+                large
+                depressed
+                class="toolbar--text"
+                to="/">
+                Go Back to Home
+            </v-btn>
+          </v-flex>
         </v-layout>
         </v-container>
 

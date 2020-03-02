@@ -154,6 +154,23 @@ a
   -webkit-box-align: center;
   align-items: center;
 
+.pf-about-container.intro
+  position relative
+
+.pf-about-container.intro:before
+  content ""
+  background-image url("/beach.jpg")
+  background-size:cover
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  top: 0;
+  opacity: 0.3;
+  background-position center right
+
 .pf-footer-container a
   padding: 5px 10px;
   border-radius: 5px;
@@ -374,5 +391,11 @@ a
     transition-duration: 1ms !important;
     -webkit-animation-iteration-count: 1 !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+@media (max-width 600px) {
+  .text-xs-center {
+    text-align center
   }
 }

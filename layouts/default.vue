@@ -10,7 +10,7 @@
         <logo></logo>
       </nuxt-link>
       <v-spacer></v-spacer>
-      <v-toolbar-items>
+      <v-toolbar-items class="hidden-sm-and-down">
         <v-btn 
           @click="scrollToAbout"
           text>About Me
@@ -39,14 +39,14 @@
     </v-content>
     <div class="pf-footer-container toolbar darken-1">
       <v-container grid-list-xs>
-        <v-layout row wrap>
+        <v-layout row wrap align-center mb-5>
           <v-flex xs12 md12 mb-5>
-            <div class="text-sm-center white--text pf-display-1">
+            <div class="text-sm-center text-xs-center white--text pf-display-1">
               <p>Let's talk about the things in your mind</p>
             </div>
-            <p class="grey--text text-sm-center">Code . Travel . Game . Sleep</p>
+            <p class="grey--text text-sm-center text-xs-center">Code . Travel . Game . Sleep</p>
           </v-flex>
-          <v-flex xs12 md12 sm12 text-sm-center mb-5>
+          <v-flex xs12 md12 sm12 text-sm-center text-xs-center mb-5>
             <a 
               class="mx-3 pf-btn"
               href="https://www.linkedin.com/in/mark-anthony-gomez-172453141/" target="_blank">
@@ -76,7 +76,7 @@
                 small>fab fa-instagram</v-icon>
             </a>
           </v-flex>
-          <v-flex xs12 sm12 text-sm-center>
+          <v-flex xs12 sm12 text-sm-center text-xs-center>
             <div class="grey--text f-12">
               © Mark Gomez 2020. All rights reserved
             </div>
@@ -128,6 +128,7 @@ import { eventHub } from '~/utils/eventHub.js'
 export default {
   data () {
     return {
+      params: null,
       clipped: false,
       drawer: false,
       fixed: false,
@@ -154,14 +155,36 @@ export default {
   },
   methods: {
     scrollToAbout () {
-      eventHub.$emit('scroll-to-about')
+      if (this.$route.name !== 'index') {
+        this.$router.push("/")
+        setTimeout(() => {
+          eventHub.$emit('scroll-to-about')
+        }, 500);
+      } else {
+        eventHub.$emit('scroll-to-about')
+      }
     },
     scrollToExperience () {
-      eventHub.$emit('scroll-to-experience')
+      if (this.$route.name !== 'index') {
+        this.$router.push("/")
+        setTimeout(() => {
+          eventHub.$emit('scroll-to-experience')
+        }, 500);
+      } else {
+        eventHub.$emit('scroll-to-experience')
+      }
     },
     scrollToPortfolio () {
-      eventHub.$emit('scroll-to-portfolio')
+      if (this.$route.name !== 'index') {
+        this.$router.push("/")
+        setTimeout(() => {
+          eventHub.$emit('scroll-to-portfolio')
+        }, 500);
+      } else {
+        eventHub.$emit('scroll-to-portfolio')
+      }
     }
-  }
+  },
 }
+
 </script>

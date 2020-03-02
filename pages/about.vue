@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="pf-about-container toolbar white--text">
+        <div class="pf-about-container intro toolbar white--text">
             <v-container grid-list-xs>
                 <v-layout row wrap>
                     <v-flex xs12 md6>
@@ -74,7 +74,7 @@
         </div>
 
         <!-- running -->
-        <div class="pf-about-container toolbar my-5 py-5">
+        <div class="pf-about-container toolbar my-5 pa-5">
             <v-container grid-list-lg>
                 <v-layout row wrap align-center>
                     <v-flex md7>
@@ -88,7 +88,7 @@
                             </p>
                         </div>
                     </v-flex>
-                    <v-flex md5 text-sm-center>
+                    <v-flex md5 xs12 text-sm-center>
                         <v-slide-group 
                             class="pa-4" show-arrows
                             max="1">
@@ -127,7 +127,7 @@
                     <template v-for="(item, key) in foods">
                         <v-flex
                             :key="`food-${key}`"
-                             md4 xs6>
+                             md4 sm6 xs12>
                             <v-img
                                 :src="item.image"></v-img>
                         </v-flex>
