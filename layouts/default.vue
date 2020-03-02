@@ -12,19 +12,23 @@
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn 
+          @click="scrollToAbout"
           text>About Me
         </v-btn>
         <v-btn 
+          @click="scrollToExperience"
           text>Working Experience
         </v-btn>
         <v-btn
-          to="#portfolio"
+          @click="scrollToPortfolio"
           text>Portfolio
         </v-btn>
+        
         <v-btn
           outlined
           depressed
-          to="#portfolio"
+          download
+          href="./CV_GOMEZ_2020.pdf"
           text>
           Resume
         </v-btn>
@@ -38,6 +42,7 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import { eventHub } from '~/utils/eventHub.js'
 export default {
   data () {
     return {
@@ -64,6 +69,17 @@ export default {
   },
   components: {
     Logo
+  },
+  methods: {
+    scrollToAbout () {
+      eventHub.$emit('scroll-to-about')
+    },
+    scrollToExperience () {
+      eventHub.$emit('scroll-to-experience')
+    },
+    scrollToPortfolio () {
+      eventHub.$emit('scroll-to-portfolio')
+    }
   }
 }
 </script>

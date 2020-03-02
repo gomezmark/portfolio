@@ -21,7 +21,7 @@
                       dark
                       outlined
                       large
-                      to="mailto:gomez.mark29@gmail.com"
+                      to="/maintenance"
                       color="accent"
                     >Get In Touch Now</v-btn>
                   </v-flex>
@@ -34,7 +34,9 @@
     </div>
 
     <!-- working experience -->
-    <div class="pf-content-container">
+    <div 
+      ref="Experience"
+      class="pf-content-container">
       <page-container>
         <v-layout row wrap>
           <v-flex xs12 sm12 mb-5>
@@ -138,7 +140,9 @@
     </div>
     <!-- education -->
 
-    <div class="pf-portfolio-container">
+    <div 
+      ref="Portfolio"
+      class="pf-portfolio-container">
       <v-container>
         <v-layout row wrap>
           <v-flex xs12 text-sm-center>
@@ -147,7 +151,7 @@
         </v-layout>
         <v-layout row wrap>
           <v-flex xs12>
-            <v-slide-group v-model="model" class="pa-4" show-arrows>
+            <v-slide-group class="pa-4" show-arrows>
               <v-slide-item
                 v-for="(item, key) in portfolio"
                 :key="key"
@@ -204,7 +208,8 @@
               outlined
               depressed
               large
-              color="accent">
+              color="accent"
+              to="/maintenance">
               Take a Tour  
             </v-btn>
           </v-flex>
@@ -213,7 +218,8 @@
     </div>
 
     <!-- working as freelance -->
-    <div class="pf-portfolio-container toolbar darken-1">
+    <div 
+      class="pf-portfolio-container toolbar darken-1">
       <v-container>
         <v-layout row wrap>
           <v-flex xs12 text-sm-center mb-5>
@@ -237,7 +243,9 @@
     </div>
 
 
-    <div class="pf-about-me-container" style="background-color:#f1f1f1;">
+    <div 
+      ref="About"
+      class="pf-about-me-container" style="background-color:#f1f1f1;">
       <v-container grid-list-xs>
         <v-layout row wrap align-center>
           <v-flex md6 sm6>
@@ -247,7 +255,8 @@
             <v-btn 
               large
               depressed
-              color="accent">
+              color="accent"
+              to="/maintenance">
               <span class="toolbar--text">Know more things About Me</span>
             </v-btn>
           </v-flex>
@@ -321,12 +330,19 @@
     >
       <v-card>
         <v-card-text class="pa-0">
-          <v-container grid-list-xs>
+          <v-container grid-list-md>
             <v-layout row wrap>
               <v-flex md8>
                <v-img :src="portfolio[pView].image"></v-img>
               </v-flex>
               <v-flex md4>
+                <p class="primary--text">{{ portfolio[pView].title }}</p>
+                <p>{{ portfolio[pView].description }}</p>
+                <template v-for="(item, key) in portfolio[pView].technologies">
+                  <p
+                    :key="`tech-${key}`"
+                    class="grey--text f-12">{{ item }}</p>
+                </template>
               </v-flex>
             </v-layout>
           </v-container>
@@ -340,6 +356,8 @@
 import PageContainer from "~/components/tools/PageContainer.vue";
 import Certifications from "~/components/Certifications.vue";
 import OthersCertifications from "~/components/OthersCertifications.vue";
+
+import { eventHub } from '~/utils/eventHub.js'
 
 export default {
   data() {
@@ -441,25 +459,29 @@ export default {
         {
           id: 1,
           title: "Hotelsakeed",
-          description: "",
+          description: "A web application for hotel reservation.",
+          technologies: ['Vue.js'],
           image: "./hotelsakeed.PNG"
         },
         {
           id: 2,
           title: "Asia-Pacific Multilingual Education Working Group",
           description: "",
+          technologies: ['Vue.js'],
           image: "./mle.JPG"
         },
         {
           id: 3,
           title: "Flyakeed",
           description: "",
+          technologies: ['Vue.js'],
           image: "./flyakeed.PNG"
         },
         {
           id: 4,
           title: "Mages Social Landing Page",
-          description: "",
+          description: "A landing page used for social media interaction",
+          technologies: ['Vue.js'],
           image: "./mages.jpg"
         }
       ],
@@ -492,7 +514,21 @@ export default {
         this.pView = item
         this.portfolioDialog = true
       } 
+    },
+    scrollToAbout () {
+      this.scrollToElement(this.$refs.About)
+    },
+    scrollToExperience () {
+      this.scrollToElement(this.$refs.Experience)      
+    },
+    scrollToPortfolio () {
+      this.scrollToElement(this.$refs.Portfolio)      
     }
+  },
+  mounted() {
+    eventHub.$on('scroll-to-about', this.scrollToAbout)
+    eventHub.$on('scroll-to-experience', this.scrollToExperience)
+    eventHub.$on('scroll-to-portfolio', this.scrollToPortfolio)
   }
 };
 </script>z

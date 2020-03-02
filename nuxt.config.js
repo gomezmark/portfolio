@@ -45,6 +45,7 @@ export default {
   */
   plugins: [
     '~/plugins/vuetify.js',
+    { src: '~/plugins/velocity.js', ssr: false },
     { src: '~/utils/events.js', ssr: false }
   ],
   /*
