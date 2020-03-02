@@ -24,7 +24,26 @@
             <v-container grid-list-lg>
                 <v-layout row wrap>
                     <v-flex xs12 md5>
-                        <v-img src="./sagada.jpg"></v-img>
+                        <v-slide-group class="pa-4" show-arrows>
+                            <v-slide-item
+                                v-for="(item, key) in mountains"
+                                :key="key"
+                            >
+                                <v-card 
+                                    class="ma-4"
+                                    width="300"
+                                    flat
+                                    color="transparent">
+                                    <v-img 
+                                    :src="item.image"
+                                    background-position="start"
+                                    max-width="100%"
+                                    height="300"
+                                    contain>
+                                    </v-img>
+                                </v-card>
+                            </v-slide-item>
+                        </v-slide-group>
                     </v-flex>
                     <v-flex xs12 md7>
                         <p class="pf-display-1">Adventures of the Mountains</p>
@@ -57,9 +76,8 @@
         <!-- running -->
         <div class="pf-about-container toolbar my-5 py-5">
             <v-container grid-list-lg>
-                <v-layout row wrap>
-                    
-                    <v-flex md8>
+                <v-layout row wrap align-center>
+                    <v-flex md7>
                         <div class="white--text">
                             <p class="pf-display-1">Shoes on the Road</p>
                             <p>
@@ -70,14 +88,100 @@
                             </p>
                         </div>
                     </v-flex>
-                    <v-flex md4 text-sm-center>
-                        <v-img 
-                            height="400"
-                            src="../running.jpg"
-                            contain></v-img>
+                    <v-flex md5 text-sm-center>
+                        <v-slide-group 
+                            class="pa-4" show-arrows
+                            max="1">
+                            <v-slide-item
+                                v-for="(item, key) in running"
+                                :key="key"
+                            >
+                                <v-card 
+                                    class="ma-4"
+                                    width="300"
+                                    flat
+                                    color="transparent">
+                                    <v-img 
+                                        :src="item.image"
+                                        background-position="start"
+                                        max-width="100%"
+                                        height="350"
+                                        contain>
+                                    </v-img>
+                                </v-card>
+                            </v-slide-item>
+                        </v-slide-group>
                     </v-flex>
+                </v-layout>
+            </v-container>
+        </div>
+
+        <!-- food -->
+        <div class="pf-about-container my-5 py-5">
+            <v-container grid-list-xs>
+                <v-layout row wrap align-center>
+                    <v-flex md12 xs12>
+                        <p class="pf-display-1">Are you Hungry? Let's Eat!</p>
+                        <p class="grey--text">Some of the dishes from my menu</p>
+                    </v-flex>
+                    <template v-for="(item, key) in foods">
+                        <v-flex
+                            :key="`food-${key}`"
+                             md4 xs6>
+                            <v-img
+                                :src="item.image"></v-img>
+                        </v-flex>
+                    </template>
                 </v-layout>
             </v-container>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    data () {
+        return {
+            mountains: [
+                {
+                    image: "./sagada.jpg"
+                },
+                {
+                    image: "./pamintinan.jpg"
+                },
+                {
+                    image: "./daraitan.jpg"
+                }
+            ],
+            running: [
+                {
+                    image: "../running.jpg"
+                },
+                {
+                    image: "../running2.jpg"
+                }
+            ],
+            foods: [
+                {
+                    image: "../food/1.jpg"
+                },
+                {
+                    image: "../food/2.jpg"
+                },
+                {
+                    image: "../food/3.jpg"
+                },
+                {
+                    image: "../food/4.jpg"
+                },
+                {
+                    image: "../food/5.jpg"
+                },
+                {
+                    image: "../food/6.jpg"
+                }
+            ]
+        }
+    }
+}
+</script>

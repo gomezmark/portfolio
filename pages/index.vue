@@ -176,7 +176,7 @@
           </v-flex>
         </v-layout>
         <v-layout row wrap>
-          <v-flex xs12>
+          <v-flex xs12 md12 sm12 text-sm-center>
             <v-slide-group class="pa-4" show-arrows>
               <v-slide-item
                 v-for="(item, key) in portfolio"
@@ -210,7 +210,7 @@
           </v-flex>
         </v-layout>
         <v-layout row wrap>
-          <v-flex xs12 md12 mb-3>
+          <v-flex xs12 md12 mb-3 text-sm-center>
             <v-slide-group v-model="model" class="pa-4" show-arrows>
               <v-slide-item
                 v-for="(item, key) in photos"
@@ -298,53 +298,7 @@
       </v-container>
     </div>
 
-    <div class="pf-footer-container toolbar darken-1">
-      <v-container grid-list-xs>
-        <v-layout row wrap>
-          <v-flex xs12 md12 mb-5>
-            <div class="text-sm-center white--text pf-display-1">
-              <p>Let's talk about the things in your mind</p>
-            </div>
-            <p class="grey--text text-sm-center">Code . Travel . Game . Sleep</p>
-          </v-flex>
-          <v-flex xs12 md12 sm12 text-sm-center mb-3>
-            <a 
-              class="mx-3 outlined"
-              href="https://www.linkedin.com/in/mark-anthony-gomez-172453141/" target="_blank">
-              <v-icon 
-                color="accent"
-                small>fab fa-linkedin</v-icon>
-            </a>
-            <a 
-              class="mx-3"
-              href="https://github.com/gomezmark" target="_blank">
-              <v-icon 
-                color="accent"
-                small>fab fa-github</v-icon>
-            </a>
-            <a 
-              class="mx-3"
-              href="https://www.youtube.com/channel/UCeDWkTmuk2tqQUzhARIa--A?view_as=subscriber" target="_blank">
-              <v-icon 
-                color="accent"
-                small>fab fa-youtube</v-icon>
-            </a>
-            <a 
-              class="mx-3"
-              href="https://www.instagram.com/rikugomez/" target="_blank">
-              <v-icon 
-                color="accent"
-                small>fab fa-instagram</v-icon>
-            </a>
-          </v-flex>
-          <v-flex xs12 sm12 text-sm-center>
-            <div class="grey--text f-12">
-              © Mark Gomez 2020. All rights reserved
-            </div>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
+    
 
     <!-- portfolio dialog -->
     <v-dialog
