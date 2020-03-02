@@ -1,6 +1,18 @@
 /* 
   Application Styles
 */
+$primary = #900c3f
+
+@font-face {
+  font-family: 'Poppins-Light';
+  font-style: normal;
+  font-weight: 400;
+  src: url('~assets/fonts/Poppins-Light.ttf');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+a 
+  text-decoration none !important
 
 .layout-enter-active, 
 .layout-leave-active {
@@ -33,6 +45,11 @@
 
 .pr-title
   margin-bottom: 10vh
+
+.pr-desc-line
+  font-size: 22px;
+  line-height: 46px;
+
 
 .pf-index-card {
   height: 80vh;
@@ -90,6 +107,84 @@
   justify-content center 
   align-items center
 
+// button
+.pf-educ-container
+  min-height 100vh
+  padding 35px 0px
+  position relative
+  background-color #fafafa
+  z-index 1
+
+.pf-educ-container:before
+  content ""
+  position absolute
+  top 0px
+  left 0px
+  width 100%
+  height 100%
+  background-image url('~assets/images/work.jpg')
+  background-size cover
+  z-index -1
+  opacity 0.2
+
+.pf-educ-container .content-container
+  max-height 100vh
+  overflow-y scroll
+
+.pf-btn-container
+  height 50px
+
+.pf-portfolio-container
+  min-height 100vh
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+
+.pf-footer-container,
+.pf-about-me-container
+  min-height 70vh
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+
+.pf-footer-container a
+  border: 1px solid #fc0;
+  padding: 5px 10px;
+  border-radius: 5px;
+
+.pf-img-label
+  position absolute
+  top 90%
+  right -10px
+  background-color #262626
+  color #fff
+  box-shadow 2px 2px 3px 1px #333
+  padding 15px
+
+
+
+
+.btn-educ-pointer.active,
+.btn-educ-pointer:hover
+  border-bottom 1px solid $primary
+  transform translateY(-3px)
+  transition 0.3s
+
+.btn-educ-pointer
+  height 32px
+  cursor  pointer
+  margin-left 22px
+  transition 0.3s
+  font-weight: bold;
+  font-size: 18px;
+
+.pf-educ-container .btn-educ-pointer:first-child
+  margin-left 0px
+
 /* 
   Hepler css
 */
@@ -112,6 +207,20 @@
 .btn-pointer
   cursor pointer
 
+.pf-display-3
+  font-size 74px
+  line-height 78px
+
+.pf-display-2
+  font-size 42px
+  line-height 46px
+
+.pf-display-1
+  font-size 32px
+  line-height 36px
+
+.opc-5
+  opacity 0.5
 
 /* animations */
 .slide-left-enter,

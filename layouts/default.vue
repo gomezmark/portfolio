@@ -3,7 +3,7 @@
     <v-app-bar
       app
       dark
-      color="dark darken-3"
+      color="toolbar"
       hide-on-scroll
     > 
       <nuxt-link to="/">
