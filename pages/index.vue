@@ -43,7 +43,7 @@
             <v-flex xs12 sm12 mb-5>
               <h2 class="headline font-weight-light bold">Working Experience</h2>
             </v-flex>
-            <v-flex md4>
+            <v-flex md5>
               <v-timeline>
                 <v-timeline-item v-for="(year, i) in experience" :key="i" small left>
                   <template left>
@@ -57,7 +57,7 @@
                 </v-timeline-item>
               </v-timeline>
             </v-flex>
-            <v-flex xs12 md8>
+            <v-flex xs12 md7>
               <v-window v-model="window" vertical>
                 <template v-for="(data, key) in experience">
                   <v-window-item :value="data.id" :key="`exp-${key}`" class>
@@ -170,37 +170,39 @@
     <div 
       ref="Portfolio"
       class="pf-portfolio-container">
-      <v-container grid-list-xl>
-        <v-layout row wrap>
-          <v-flex xs12 text-sm-center text-xs-center>
-            <span class="headline font-weight-light bold">Portfolio</span>
-          </v-flex>
-        </v-layout>
-        <v-layout row wrap>
-          <v-flex xs12 md12 sm12 text-sm-center>
+      <page-container>
+        <v-container grid-list-xl>
+          <v-layout row wrap>
+            <v-flex xs12 text-sm-center text-xs-center>
+              <span class="headline font-weight-light bold">Portfolio</span>
+            </v-flex>
+          </v-layout>
+          <v-layout row wrap justify-center align-center>
             <v-slide-group class="pa-4" show-arrows>
               <v-slide-item
                 v-for="(item, key) in portfolio"
                 :key="key"
-              >
-                <v-card 
-                  class="ma-4" 
-                  height="250" 
-                  width="300" 
-                  @click="viewPortfolio(key)">
-                    <v-img 
-                      :src="item.image"
-                      background-position="start"
-                      max-width="300"
-                      max-height="250"
-                      cover>
-                    </v-img>
-                </v-card>
+                >
+                <v-flex xs12 sm12 md12 lg8 xl8 text-sm-center>
+                  <v-card 
+                    class="ma-4" 
+                    height="250" 
+                    @click="viewPortfolio(key)">
+                      <v-img 
+                        :src="item.image"
+                        background-position="start"
+                        max-width="300"
+                        max-height="250"
+                        cover
+                        style="margin:auto">
+                      </v-img>
+                  </v-card>
+                </v-flex>
               </v-slide-item>
             </v-slide-group>
-          </v-flex>
-        </v-layout>
-      </v-container>
+          </v-layout>
+        </v-container>
+      </page-container>
     </div>
 
     <div class="pf-portfolio-container toolbar">
@@ -210,13 +212,13 @@
             <span class="pf-display-1 font-weight-light bold white--text">My Photography</span>
           </v-flex>
         </v-layout>
-        <v-layout row wrap>
-          <v-flex xs12 md12 mb-3 text-sm-center>
-            <v-slide-group v-model="model" class="pa-4" show-arrows>
-              <v-slide-item
-                v-for="(item, key) in photos"
-                :key="key"
-              >
+        <v-layout row wrap justify-center align-center>
+          <v-slide-group v-model="model" class="pa-4" show-arrows>
+            <v-slide-item
+              v-for="(item, key) in photos"
+              :key="key"
+            >
+              <v-flex xs12 md12 mb-3 text-sm-center text-xs-cener>
                 <v-card 
                   class="ma-4">
                     <v-img 
@@ -227,10 +229,10 @@
                       cover>
                     </v-img>
                 </v-card>
-              </v-slide-item>
-            </v-slide-group>
-          </v-flex>
-          <v-flex xs12 sm12 md12 text-sm-center>
+              </v-flex>
+            </v-slide-item>
+          </v-slide-group>
+          <v-flex xs12 sm12 md12 text-sm-center text-xs-center>
             <v-btn 
               outlined
               depressed
@@ -246,14 +248,14 @@
 
     <!-- working as freelance -->
     <div 
-      class="pf-portfolio-container toolbar darken-1">
+      class="pf-portfolio-container toolbar darken-1 pa-5">
       <v-container grid-list-xl>
         <v-layout row wrap>
-          <v-flex xs12 text-sm-center mb-5>
+          <v-flex xs12 text-sm-center text-xs-center mb-5>
             <span class="font-weight-light bold accent--text pf-display-1">Working as Freelance</span>
           </v-flex>
           <v-flex xs12 sm12>
-            <div class="white--text text-sm-center pf-display-1">
+            <div class="white--text text-sm-center text-xs-center pf-display-1">
               <p>Do you need a website for your Business or for your Personal Blogs?</p>
               <p>Let us discuss your needs and let help you build your site.</p>
             </div>
@@ -272,31 +274,36 @@
 
     <div 
       ref="About"
-      class="pf-about-me-container" style="background-color:#f1f1f1;">
-      <v-container grid-list-md>
-        <v-layout row wrap align-center>
-          <v-flex md6 sm6 mb-3>
-            <p class="pf-display-1">Myself</p>
-            <p>There are more stuff I am doing about my life.</p>
-            <p>Being a web devloper / programmer is just one.</p>
-            <v-btn 
-              large
-              depressed
-              color="accent"
-              to="/about">
-              <span class="toolbar--text">Know more things About Me</span>
-            </v-btn>
-          </v-flex>
-          <v-flex md6 sm6>
-            <div class="relative">
-              <v-img src=".//sagada.jpg"></v-img>
-              <div class="pf-img-label">
-                Sagada, Mountain Province
+      class="pf-about-me-container pa-5" 
+      style="background-color:#f1f1f1;">
+      <page-container>
+        <v-container grid-list-md>
+          <v-layout row wrap align-center>
+            <v-flex md6 sm6 mb-3>
+              <p class="pf-display-1">Myself</p>
+              <p>There are more stuff I am doing about my life.</p>
+              <p>Being a web devloper / programmer is just one.</p>
+              <div class="text-xs-center">
+                <v-btn 
+                  large
+                  depressed
+                  color="accent"
+                  to="/about">
+                  <span class="toolbar--text">Know more things About Me</span>
+                </v-btn>
               </div>
-            </div>
-          </v-flex>
-        </v-layout>
-      </v-container>
+            </v-flex>
+            <v-flex md6 sm6 mb-5>
+              <div class="relative">
+                <v-img src=".//sagada.jpg"></v-img>
+                <div class="pf-img-label">
+                  Sagada, Mountain Province
+                </div>
+              </div>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </page-container>
     </div>
 
     

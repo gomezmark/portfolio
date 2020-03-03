@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-xs>
       <v-layout row wrap justify-center>
-          <v-flex xs12 md12 lg10>
+          <v-flex xs12 sm12 md12 lg8 xl8>
             <slot></slot>
           </v-flex>
       </v-layout>

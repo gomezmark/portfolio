@@ -44,7 +44,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/vuetify.js',
+    { src: '~/plugins/vuetify.js', ssr: false },
     { src: '~/plugins/velocity.js', ssr: false },
     { src: '~/utils/events.js', ssr: false }
   ],

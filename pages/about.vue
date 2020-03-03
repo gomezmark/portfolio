@@ -119,7 +119,7 @@
         <!-- food -->
         <div class="pf-about-container my-5 py-5">
             <v-container grid-list-xs>
-                <v-layout row wrap align-center>
+                <v-layout row wrap align-center mb-5>
                     <v-flex md12 xs12>
                         <p class="pf-display-1">Are you Hungry? Let's Eat!</p>
                         <p class="grey--text">Some of the dishes from my menu</p>
@@ -132,6 +132,17 @@
                                 :src="item.image"></v-img>
                         </v-flex>
                     </template>
+                </v-layout>
+                <v-layout>
+                  <v-flex xs12 sm12 md12 text-sm-center text-xs-center mb-5>
+                    <v-btn color="accent"
+                      depressed
+                      large
+                      to="/"
+                      >
+                      <span class="toolbar--text">Go to Home</span>
+                    </v-btn>
+                  </v-flex>
                 </v-layout>
             </v-container>
         </div>

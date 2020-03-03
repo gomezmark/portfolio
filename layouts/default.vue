@@ -82,41 +82,43 @@
             </div>
           </v-flex>
         </v-layout>
-        <v-layout row wrap align-center>
-          <v-flex text-sm-left>
-            <div class="mb-4">
-             <nuxt-link
-                small
-                class="accent--text f-12"
-                to="/about"
-                >
-                About
-              </nuxt-link>
-            </div>
-            <div class="mb-4">
-
+        <page-container>
+          <v-layout row wrap align-center>
+            <v-flex text-sm-left>
+              <div class="mb-4">
               <nuxt-link
-                small
-                class="accent--text f-12"
-                to="/photography"
-                >
-                Photography
-              </nuxt-link>
-            </div>
-            <div class="mb-4">
-              <v-btn
-                outlined
-                depressed
-                download
-                href="./CV_GOMEZ_2020.pdf"
-                color="accent"
-                text
-                small>
-                Resume
-              </v-btn>
-            </div>
-          </v-flex>
-        </v-layout>
+                  small
+                  class="accent--text f-12"
+                  to="/about"
+                  >
+                  About
+                </nuxt-link>
+              </div>
+              <div class="mb-4">
+
+                <nuxt-link
+                  small
+                  class="accent--text f-12"
+                  to="/photography"
+                  >
+                  Photography
+                </nuxt-link>
+              </div>
+              <div class="mb-4">
+                <v-btn
+                  outlined
+                  depressed
+                  download
+                  href="./CV_GOMEZ_2020.pdf"
+                  color="accent"
+                  text
+                  small>
+                  Resume
+                </v-btn>
+              </div>
+            </v-flex>
+          </v-layout>
+        </page-container>
       </v-container>
     </div>
   </v-app>
@@ -125,6 +127,8 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import { eventHub } from '~/utils/eventHub.js'
+import PageContainer from '~/components/tools/PageContainer.vue'
+
 export default {
   data () {
     return {
@@ -151,7 +155,8 @@ export default {
     }
   },
   components: {
-    Logo
+    Logo,
+    PageContainer
   },
   methods: {
     scrollToAbout () {
