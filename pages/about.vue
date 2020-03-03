@@ -11,7 +11,7 @@
                             which specialize on frontend.
                         </p>
                         <p>
-                            This is curreny carreer and pursuing my goal as Project Consultant. But there are lot of things
+                            This is current career and pursuing my goal as Project Consultant. But there are lot of things
                             to know and I am open for new possibilies and new world to be explored.
                         </p>
                     </v-flex>
@@ -53,7 +53,7 @@
                         </p>
                         <div class="grey--text italic text-xs-center text-sm-cente">
                             <p class="bold">
-                                ETIQUTTE 101
+                                ETIQUETTE 101
                             </p>
                             <p class="mb-0">
                                 Leave nothing but footprints

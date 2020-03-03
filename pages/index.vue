@@ -282,7 +282,7 @@
             <v-flex md6 sm6 mb-3>
               <p class="pf-display-1">Myself</p>
               <p>There are more stuff I am doing about my life.</p>
-              <p>Being a web devloper / programmer is just one.</p>
+              <p>Being a web developer / programmer is just one.</p>
               <div class="text-xs-center">
                 <v-btn 
                   large
