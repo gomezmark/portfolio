@@ -78,7 +78,7 @@ export default {
           logo: './udemy.png'
         },
         {
-          title: 'How To Conquer your Fears and Fulfill your Dreams',
+          title: 'Hyperthinking: Improve your day to day learning and creativity',
           issuedBy: 'Udemy',
           certId: '',
           issuingDate: 'Feb 2012',

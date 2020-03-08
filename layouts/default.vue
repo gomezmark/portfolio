@@ -12,7 +12,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn 
-          @click="scrollToAbout"
+          to="/about"
           text>About Me
         </v-btn>
         <v-btn 
@@ -22,6 +22,10 @@
         <v-btn
           @click="scrollToPortfolio"
           text>Portfolio
+        </v-btn>
+        <v-btn
+          to="/photography"
+          text>Exhibit
         </v-btn>
         
         <v-btn
@@ -83,8 +87,8 @@
           </v-flex>
         </v-layout>
         <page-container>
-          <v-layout row wrap align-center>
-            <v-flex text-sm-left>
+          <v-layout row wrap align-start>
+            <v-flex md3 text-sm-left>
               <div class="mb-4">
               <nuxt-link
                   small
@@ -103,6 +107,20 @@
                   >
                   Photography
                 </nuxt-link>
+              </div>
+            </v-flex>
+            <v-flex md3 text-sm-left>
+              <div class="mb-4">
+                <v-btn
+                  outlined
+                  depressed
+                  download
+                  to="/photography"
+                  color="accent"
+                  text
+                  small>
+                  Exhibit
+                </v-btn>
               </div>
               <div class="mb-4">
                 <v-btn

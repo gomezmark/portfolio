@@ -97,7 +97,7 @@
                   color="accent"
                   class="mx-3"
                   small
-                  :key="`t-c-${key}`">fab fa-circle</v-icon>
+                  :key="`t-c-${key}`">far fa-circle</v-icon>
                 <span 
                   :key="`tech-${key}`"
                   class="grey--text">
@@ -209,7 +209,7 @@
       <v-container>
         <v-layout row wrap>
           <v-flex xs12 text-sm-center text-xs-center mb-5>
-            <span class="pf-display-1 font-weight-light bold white--text">My Photography</span>
+            <span class="pf-display-1 font-weight-light bold white--text">My Eye with the Lens</span>
           </v-flex>
         </v-layout>
         <v-layout row wrap justify-center align-center>
@@ -331,7 +331,7 @@
                     v-if="key !==0 "
                     :key="`d-tech-${key}`"
                     small
-                    color="accent">fab fa-circle</v-icon>
+                    color="accent">fas fa-check-circle</v-icon>
                   <span
                     :key="`tech-${key}`"
                     class="grey--text f-12">

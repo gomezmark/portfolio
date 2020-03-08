@@ -18,7 +18,47 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'I am Mark Anthony Gomez, a Software Engineer / Web developer which specialize on front end development with working experience on the corporate world. I am open for business opportunites, freelance projects and management, project-based web applciation.'
+      },
+      { 'http-equiv': 'pragma', content: 'no-cache' },
+      { 'http-equiv': 'cache-control', content: 'max-age=2628000, public' },
+      { 'http-equiv': 'expires', content: '0' },
+      {
+        property: 'og:title',
+        content: 'Mark Gomez | Software Engineer / Web developer -- Frontend | Freelance developer'
+      },
+      {
+        property: 'og:description',
+        content: 'Let me help you to build your website or application that you need either Business or Personal.'
+      },
+      {
+        property: 'og:site_name',
+        content: 'Mark Gomez | Software Engineer'
+      },
+      {
+        property: 'og:url',
+        content: 'gomezmark.com'
+      },
+      {
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        property: 'og:image',
+        content: 'https://gomezmark.com/markgomez.jpg'
+      },
+      {
+        property: 'og:image:width',
+        content: '1297'
+      },
+      {
+        property: 'og:image:height',
+        content: '653'
+      }
     ],
     link: [
       { rel: 'stylesheet', type: 'css', href: 'https://fonts.googleapis.com/css?family=Poppins:300,400,600,700&display=swap' },

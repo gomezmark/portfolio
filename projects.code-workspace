@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "/Users/markgomez/Projects/mle"
+		},
+		{
+			"path": "/Users/markgomez/Projects/backend/express-api-template"
+		},
+		{
+			"path": "/Users/markgomez/Projects/backend/test"
 		}
 	],
 	"settings": {}
