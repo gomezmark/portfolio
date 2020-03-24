@@ -13,19 +13,23 @@
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn 
           to="/about"
+          color="accent"
           text>About Me
         </v-btn>
         <v-btn 
           @click="scrollToExperience"
-          text>Working Experience
+          text
+          color="accent">Working Experience
         </v-btn>
         <v-btn
           @click="scrollToPortfolio"
-          text>Portfolio
+          text
+          color="accent">Portfolio
         </v-btn>
         <v-btn
           to="/photography"
-          text>Exhibit
+          text
+          color="accent">Exhibit
         </v-btn>
         
         <v-btn
@@ -33,7 +37,8 @@
           depressed
           download
           href="./CV_GOMEZ_2020.pdf"
-          text>
+          text
+          color="accent">
           Resume
         </v-btn>
       </v-toolbar-items>

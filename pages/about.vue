@@ -84,7 +84,8 @@
                                 I also do physical activities, this includes RUNNING.
                             </p>
                             <p>
-                                I started to run in a small distance for about 3 kilometers. Until it become longer and longer distance. Last 2018, I joined in a full marathon held in Manila. This was farthest I've so far.
+                                I started to run in a small distance for about 3 kilometers. Then, gradually increasing the distance.
+                                Last 2018, I joined in a full marathon held in Manila. This was farthest I've ran so far.
                             </p>
                         </div>
                     </v-flex>

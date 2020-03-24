@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="grey darken-3">
+    <div class="grey darken-4">
       <page-container>
         <v-layout dark style="height:100vh">
           <v-flex class="text-center">
@@ -320,17 +320,18 @@
         <v-card-text class="">
           <v-container grid-list-lg>
             <v-layout row wrap>
-              <v-flex md8>
+              <v-flex md12>
                <v-img :src="portfolio[pView].image"></v-img>
               </v-flex>
-              <v-flex md4>
-                <p class="primary--text">{{ portfolio[pView].title }}</p>
+              <v-flex md12 my-3>
+                <p class="headline primary--text">{{ portfolio[pView].title }}</p>
                 <p>{{ portfolio[pView].description }}</p>
                 <template v-for="(item, key) in portfolio[pView].technologies">
                   <v-icon
                     v-if="key !==0 "
                     :key="`d-tech-${key}`"
                     small
+                    class="mx-2"
                     color="accent">fas fa-check-circle</v-icon>
                   <span
                     :key="`tech-${key}`"

@@ -12,7 +12,7 @@
               </p>
               <p
                 class="grey--text"
-              >It is good and health warning experience to take photos of some memorable moments.</p>
+              >It is good and heart warming experience to take photos of some memorable moments.</p>
             </div>
           </v-flex>
         </v-layout>
